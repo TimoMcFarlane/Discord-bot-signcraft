@@ -12,7 +12,10 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-  if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) {
+  if (
+    !msg.content.startsWith(process.env.PREFIX) ||
+    msg.author.username === "Signcraft"
+  ) {
     msg.react(client.emojis.find(el => el.name === "tank"));
     msg.react(client.emojis.find(el => el.name === "dps"));
     msg.react(client.emojis.find(el => el.name === "healer"));
