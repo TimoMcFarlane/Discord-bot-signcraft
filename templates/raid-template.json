@@ -1,0 +1,19 @@
+{
+  "title": "Raid",
+  "description": "Bring flasks, potions, enchants, food... you know the drill.",
+  "tank": {
+    "icon": "tank",
+    "title": "Tank",
+    "list": "-"
+  },
+  "healer": {
+    "icon": "healer",
+    "title": "Healer",
+    "list": "-"
+  },
+  "dps": {
+    "icon": "dps",
+    "title": "Dps",
+    "list": "-"
+  }
+}
