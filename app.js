@@ -13,9 +13,9 @@ client.on("ready", () => {
 
 client.on("message", msg => {
   if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) {
-    msg.react(msg.guild.emojis.find(el => el.name === "tank").id);
-    msg.react(msg.guild.emojis.find(el => el.name === "dps").id);
-    msg.react(msg.guild.emojis.find(el => el.name === "healer").id);
+    msg.react(client.emojis.find(el => el.name === "tank"));
+    msg.react(client.emojis.find(el => el.name === "dps"));
+    msg.react(client.emojis.find(el => el.name === "healer"));
   } else {
     const args = msg.content
       .slice(process.env.PREFIX.length)
