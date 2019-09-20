@@ -33,23 +33,7 @@ client.on("message", msg => {
 });
 
 client.on(ADD, (reaction, user) => {
-  new Promise(resolve => {
-    let temp = reaction.message.reactions.filter(
-      reaction =>
-        reaction.emoji.name === "tank" ||
-        reaction.emoji.name === "dps" ||
-        reaction.emoji.name === "healer"
-    );
-    resolve(temp);
-  })
-    .then(res => {
-      reaction.message.reactions = res;
-      return reaction;
-    })
-    .then(res => {
-      console.log(res.message.reactions);
-      editSignups(ADD, res, user);
-    });
+  editSignups(ADD, reaction, user);
 });
 
 client.on(REMOVE, (reaction, user) => {
@@ -57,7 +41,6 @@ client.on(REMOVE, (reaction, user) => {
 });
 
 editSignups = (type, reaction, user) => {
-  console.log(user.username);
   if (user.username !== "Signcraft") {
     switch (reaction.emoji.name) {
       case "tank":
