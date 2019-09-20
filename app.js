@@ -16,9 +16,10 @@ client.on("message", msg => {
     !msg.content.startsWith(process.env.PREFIX) ||
     msg.author.username === "Signcraft"
   ) {
-    msg.react(client.emojis.find(el => el.name === "tank"));
-    msg.react(client.emojis.find(el => el.name === "dps"));
-    msg.react(client.emojis.find(el => el.name === "healer"));
+    console.log(msg.author.username);
+    //msg.react(client.emojis.find(el => el.name === "tank"));
+    //msg.react(client.emojis.find(el => el.name === "dps"));
+    //msg.react(client.emojis.find(el => el.name === "healer"));
   } else {
     const args = msg.content
       .slice(process.env.PREFIX.length)
